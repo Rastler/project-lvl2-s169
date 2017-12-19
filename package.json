@@ -1,6 +1,6 @@
 {
   "name": "hexlet-project02-by-rastler",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/index.js",
   "bin": {
@@ -16,18 +16,21 @@
   "author": "Roman Averin",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.12.2"
+    "commander": "^2.12.2",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
+    "babel-jest": "^22.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "jest": "^22.0.0",
-    "jest-cli": "^22.0.0"
+    "jest-cli": "^22.0.0",
+    "regenerator-runtime": "^0.11.1"
   }
 }
