@@ -2,9 +2,11 @@
 
 import program from 'commander';
 import gendiff from '../';
+import version from '../../package.json';
 
+console.log(version);
 program
-  .version('0.2.0')
+  .version(version)
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'Output format', 'type')
   .arguments('<firstConfig> <secondConfig>')
