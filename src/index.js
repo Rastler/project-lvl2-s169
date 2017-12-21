@@ -2,10 +2,12 @@ import { readFileSync } from 'fs';
 import path from 'path';
 import _ from 'lodash';
 import yaml from 'js-yaml';
+import ini from 'ini';
 
 const selectParseFn = {
   '.json': JSON.parse,
   '.yml': yaml.safeLoad,
+  '.ini': ini.decode,
 };
 const process = (pointer, fileType) => {
   const parseFn = selectParseFn[fileType];
@@ -30,8 +32,8 @@ const compare = (obj1, obj2) => {
   }, []);
 };
 export default (pathToFile1, pathToFile2) => {
-  const pointerFile1 = readFileSync(pathToFile1);
-  const pointerFile2 = readFileSync(pathToFile2);
+  const pointerFile1 = readFileSync(pathToFile1, 'utf-8');
+  const pointerFile2 = readFileSync(pathToFile2, 'utf-8');
   const obj1 = process(pointerFile1, path.extname(pathToFile1));
   const obj2 = process(pointerFile2, path.extname(pathToFile2));
   return `{\n ${compare(obj1, obj2).join('\n')}\n}`;
